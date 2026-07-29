@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+         function info()
+    {
+        let age = parseInt(prompt("enter value of age"));
+        
+        if(age>=18)
+    {
+        let c = confirm("do u want to submit your vote");
+        if(c)
+        {
+        alert(" Your response submitted");
+        }
+        else 
+        {
+        alert("not submitted , thank you");
+        }
+    }
+
+        else 
+        {
+            alert("not eligible to vote")
+        }
+    }
+
+    </script>
+</head>
+<body>
+
+    <input type ="button" onclick = " info()" value = "Result">
+</body>
+</html>
