@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+
+<body>
+
+<form id="form">
+
+    <h2>Registration Form</h2>
+
+    <label>Name:</label>
+    <input type="text" id="name"><br><br>
+
+    <label>Email:</label>
+    <input type="email" id="email"><br><br>
+
+    <label>Password:</label>
+    <input type="password" id="password"><br><br>
+
+    <label>Re-enter Password:</label>
+    <input type="password" id="repassword"><br><br>
+
+    <label>Mobile:</label>
+    <input type="text" id="mobile"><br><br>
+
+    <button type="submit">Register</button>
+
+</form>
+
+<p id="msg"></p>
+
+<script>
+
+const form = document.getElementById("form");
+const msg = document.getElementById("msg");
+
+form.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+    let repassword = document.getElementById("repassword").value;
+    let mobile = document.getElementById("mobile").value.trim();
+
+    if (!name || !email || !password || !repassword || !mobile)
+        msg.innerText = "Please fill all fields.";
+
+    else if (password.length < 6)
+        msg.innerText = "Password must be at least 6 characters.";
+
+    else if (password !== repassword)
+        msg.innerText = "Passwords do not match.";
+
+    else if (mobile.length !== 10 || isNaN(mobile))
+        msg.innerText = "Enter a valid 10-digit mobile number.";
+
+    else
+        msg.innerText = "Registration Successful!";
+
+});
+
+</script>
+
+</body>
+</html>
