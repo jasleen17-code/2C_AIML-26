@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let first="Jasleen";
+            let last="Kaur";
+            console.log(`my name is ${first} ${last}`);
+            let fullName=`my name is ${first} ${last}`;
+            console.log(fullName);
+            function getFullName(first,last){
+                return `${first} ${last}`
+            }
+            let name= `Hello ${getFullName("Jasleen","Kaur")}`;
+            console.log(name);
+            fullName=(first,last)=> {
+                return `${first} ${last}`
+            }
+            console.log(fullName("Jass","kaur"));
+        </script>
+    </head>
+</html>
