@@ -1,0 +1,39 @@
+<!DOCTYPE html> 
+<html>
+<body>
+<script>
+    class Student 
+    
+    {
+        //constructor 
+        constructor(name)
+        { 
+            this.Name = name; 
+            console.log(this.Name);
+        } 
+
+        // function
+
+        info()
+        {
+            console.log(this.Name);
+        }
+
+        // static method
+
+        static display()
+        {
+            console.log("this is static variable.");
+        }
+    } 
+
+      let s1 = new Student("Jasleen");
+      let s2 = new Student();
+
+      s1.info();
+
+      Student.display();
+      
+    </script> 
+</body>
+</html>
