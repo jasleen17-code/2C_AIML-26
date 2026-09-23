@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Account</title>
+    <script>
+    class BankAccount {
+      constructor(accountNo, holderName, balance) {
+        this.accountNo = accountNo;
+        this.holderName = holderName;
+        this.balance = balance;
+      }
+
+      deposit(amount) {
+        if (amount <= 0) return console.log("Deposit must be > 0");
+        this.balance += amount;
+        console.log(amount + " deposited to " + this.holderName);
+      }
+
+      withdraw(amount) {
+        if (amount <= 0) console.log("Withdrawal must be > 0");
+        else if (amount > this.balance) console.log("Insufficient funds for " + this.holderName);
+        else {
+          this.balance -= amount;
+          console.log(amount + " withdrawn from " + this.holderName);
+        }
+      }
+
+      displayBalance() {
+        console.log("Account: " + this.accountNo + " | Name: " + this.holderName + " | Balance: " + this.balance);
+      }
+    }
+
+    const a1 = new BankAccount("ACC101", "jasleen", 5000);
+    const a2 = new BankAccount("ACC102", "kakul", 3000);
+
+    a1.deposit(15000); a1.withdraw(2000); a1.displayBalance();
+    a2.withdraw(35000); a2.deposit(10000); a2.withdraw(500); a2.displayBalance();
+    </script>
+</head>
+<body></body>
+</html>
