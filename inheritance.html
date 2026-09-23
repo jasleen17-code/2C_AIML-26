@@ -1,0 +1,81 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class student{
+            constructor()
+            {
+                console.log("Student class");
+            }
+        };
+        class Demo extends student//
+        {
+            // super() // direct parent class ko call krega 
+            constructor()// (agr constructor rakhnege tuh demo me jo likha h vuh aya agr yeh  nhi likhoge tuh parent vala print hoga )
+            {
+                console.log("Demo class";)
+            }
+        };
+        let D= new.Demo();
+        D.info();
+        info()
+        {
+            console.log("student info");
+        }
+        info()
+        {
+            super.info();
+            console.log("Demo info");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>*/ -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class student {
+            constructor() {
+                console.log("Student class constructor");
+            }
+
+            info() {
+                console.log("student info");
+            }
+        }
+
+        class Demo extends student {
+            constructor() {
+                super(); // Required! Calls the parent class constructor
+                console.log("Demo class constructor");
+            }
+
+            info() {
+                super.info(); // Calls the info() method from the parent student class
+                console.log("Demo info");
+            }
+        }
+
+        // To test it after the page or script loads:
+        window.onload = function() {
+            let D = new Demo(); // Fixed syntax from new.Demo()
+            D.info(); // Will print "student info" followed by "Demo info"
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>
